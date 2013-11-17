@@ -1,0 +1,45 @@
+<?php
+/**
+* Implements hook_rules_condition_info().
+*
+* Declare a new Rules condition : "Text contains any word in a list"
+* This condition is gonna be used as a way to match comment content and the list of suspect words
+*
+* @return array the condition description
+*/
+function rules_list_contains_rules_condition_info() {
+  return array(
+    'rules_list_contains' => array(
+      'label' => t('Text contains any word in a list'),
+      'group' => t('Data'),
+      'parameter' => array(
+        'text' => array(
+          'label' => t('Text to search into'),
+          'type' => 'text'
+        ),
+        'list' => array(
+          'label' => t('List of words to match'),
+          'type' => 'list<text>',
+          'description' => t('The comparison will be case insensitive'),
+        ),
+      ),
+    ),
+  );
+}
+/**
+* Rules condition callback. Matches a text against a list of words.
+*
+* @param $text string Text to search into
+* @param $list array List of words to match
+* @return boolean TRUE if there's a match, FALSE otherwise
+*/
+function rules_list_contains($text, $list) {
+  $match = 0;
+  foreach ($list as $word) {
+    // This pattern takes care of word boundaries, and is case insensitive
+    $pattern = "/\b$word\b/i";
+    $match += preg_match($pattern, $text);
+  }
+  return $match == 0 ? FALSE : TRUE;
+}
+?>

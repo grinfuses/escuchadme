@@ -1,0 +1,3 @@
+name = Rules List Contains
+description = Comparar el texto con una lista de palabras para categorizarlas
+core = 7.x

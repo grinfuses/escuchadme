@@ -1,0 +1,16 @@
+name = Map from gallery
+description = "Shows gallery images on maps (using OpenLayers)."
+core = 7.x
+package = Galerie
+dependencies[] = galerie
+files[] = galerie_geoloc.module
+files[] = galerie_geoloc.install
+php = 5.3
+
+
+; Information added by drupal.org packaging script on 2013-02-17
+version = "7.x-1.11"
+core = "7.x"
+project = "galerie"
+datestamp = "1361113082"
+
