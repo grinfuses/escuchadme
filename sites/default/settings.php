@@ -215,9 +215,9 @@ $databases = array (
   array (
     'default' => 
     array (
-      'database' => 'escuchadme',
-      'username' => 'root',
-      'password' => 'cambiar1',
+      'database' => '',
+      'username' => '',
+      'password' => '',
       'host' => 'localhost',
       'port' => '',
       'driver' => 'mysql',
