@@ -215,10 +215,10 @@ $databases = array (
   array (
     'default' => 
     array (
-      'database' => '',
-      'username' => '',
-      'password' => '',
-      'host' => 'localhost',
+      'database' => 'DATABASE_NAME',
+      'username' => 'DATABASE_USER',
+      'password' => 'DATABASE_PASS',
+      'host' => 'DATABASE_HOST',
       'port' => '',
       'driver' => 'mysql',
       'prefix' => '',
